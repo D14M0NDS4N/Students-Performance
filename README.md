@@ -81,7 +81,7 @@ Dashboard ini diintegrasikan langsung ke dalam prototipe aplikasi **Streamlit (`
    - **Dampak Keterlambatan SPP terhadap Dropout (Bar Chart)**: Menunjukkan mahasiswa yang menunggak SPP memiliki risiko dropout drastis mencapai **>62%**.
 
 ### Tautan Akses & Screenshot Dashboard:
-- **Tautan Live Streamlit Dashboard**: [Jaya Jaya Institut - Early Warning System](https://students-performance-dicoding.streamlit.app/) *(Dapat diakses setelah proses deploy GitHub ke Streamlit Community Cloud)*
+- **Tautan Live Streamlit Dashboard**: [Jaya Jaya Institut - Student Retention System](https://students-performance25.streamlit.app/) *(Dapat diakses setelah proses deploy GitHub ke Streamlit Community Cloud)*
 - **Tautan Looker Studio Template**: [Google Looker Studio - Student Performance Dashboard](https://datastudio.google.com/s/kO6PvPzsf60) *(Gunakan file `data/students_clean.csv` sebagai data source)*
 - **Tautan Metabase**: [Metabase - Student Performance Dashboard][Email: root@gmail.com and Password: root123]
 - **Screenshot Dashboard Visual**:
@@ -109,7 +109,6 @@ streamlit run app.py
 Setelah perintah dijalankan, aplikasi web akan otomatis terbuka pada browser Anda di alamat:
 ```
 Local URL: http://localhost:8501
-Network URL: http://<ip-address>:8501
 ```
 
 ### 2. Cara Menggunakan Prototipe:
