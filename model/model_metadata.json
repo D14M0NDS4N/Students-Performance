@@ -1,0 +1,175 @@
+{
+  "model_name": "RandomForestClassifier",
+  "classes": [
+    "Dropout",
+    "Enrolled",
+    "Graduate"
+  ],
+  "label_to_id": {
+    "Dropout": 0,
+    "Enrolled": 1,
+    "Graduate": 2
+  },
+  "id_to_label": {
+    "0": "Dropout",
+    "1": "Enrolled",
+    "2": "Graduate"
+  },
+  "feature_names": [
+    "Marital_status",
+    "Application_mode",
+    "Application_order",
+    "Course",
+    "Daytime_evening_attendance",
+    "Previous_qualification",
+    "Previous_qualification_grade",
+    "Nacionality",
+    "Mothers_qualification",
+    "Fathers_qualification",
+    "Mothers_occupation",
+    "Fathers_occupation",
+    "Admission_grade",
+    "Displaced",
+    "Educational_special_needs",
+    "Debtor",
+    "Tuition_fees_up_to_date",
+    "Gender",
+    "Scholarship_holder",
+    "Age_at_enrollment",
+    "International",
+    "Curricular_units_1st_sem_credited",
+    "Curricular_units_1st_sem_enrolled",
+    "Curricular_units_1st_sem_evaluations",
+    "Curricular_units_1st_sem_approved",
+    "Curricular_units_1st_sem_grade",
+    "Curricular_units_1st_sem_without_evaluations",
+    "Curricular_units_2nd_sem_credited",
+    "Curricular_units_2nd_sem_enrolled",
+    "Curricular_units_2nd_sem_evaluations",
+    "Curricular_units_2nd_sem_approved",
+    "Curricular_units_2nd_sem_grade",
+    "Curricular_units_2nd_sem_without_evaluations",
+    "Unemployment_rate",
+    "Inflation_rate",
+    "GDP"
+  ],
+  "top_features": [
+    [
+      "Curricular_units_2nd_sem_approved",
+      0.12769332432236993
+    ],
+    [
+      "Curricular_units_2nd_sem_grade",
+      0.09576202294340395
+    ],
+    [
+      "Curricular_units_1st_sem_approved",
+      0.07484890072240499
+    ],
+    [
+      "Curricular_units_1st_sem_grade",
+      0.06214250809372253
+    ],
+    [
+      "Admission_grade",
+      0.0453357170139161
+    ],
+    [
+      "Curricular_units_2nd_sem_evaluations",
+      0.04531209755214874
+    ],
+    [
+      "Tuition_fees_up_to_date",
+      0.04233864071077223
+    ],
+    [
+      "Curricular_units_1st_sem_evaluations",
+      0.04165733651354424
+    ],
+    [
+      "Age_at_enrollment",
+      0.04134297886932322
+    ],
+    [
+      "Previous_qualification_grade",
+      0.040852061649915214
+    ],
+    [
+      "Course",
+      0.03363134539178719
+    ],
+    [
+      "Fathers_occupation",
+      0.032071481075294735
+    ],
+    [
+      "Mothers_occupation",
+      0.029981140838615878
+    ],
+    [
+      "GDP",
+      0.027209718725488018
+    ],
+    [
+      "Unemployment_rate",
+      0.024259269540636536
+    ]
+  ],
+  "metrics": {
+    "accuracy": 0.7537,
+    "macro_f1": 0.7082,
+    "weighted_f1": 0.7589,
+    "classification_report": {
+      "Dropout": {
+        "precision": 0.8361344537815126,
+        "recall": 0.7007042253521126,
+        "f1-score": 0.7624521072796935,
+        "support": 284.0
+      },
+      "Enrolled": {
+        "precision": 0.46733668341708545,
+        "recall": 0.5849056603773585,
+        "f1-score": 0.5195530726256983,
+        "support": 159.0
+      },
+      "Graduate": {
+        "precision": 0.8370535714285714,
+        "recall": 0.8484162895927602,
+        "f1-score": 0.8426966292134831,
+        "support": 442.0
+      },
+      "accuracy": 0.7536723163841808,
+      "macro avg": {
+        "precision": 0.7135082362090565,
+        "recall": 0.7113420584407438,
+        "f1-score": 0.7082339363729583,
+        "support": 885.0
+      },
+      "weighted avg": {
+        "precision": 0.7703349108572822,
+        "recall": 0.7536723163841808,
+        "f1-score": 0.7588895447765859,
+        "support": 885.0
+      }
+    }
+  },
+  "course_mapping": {
+    "33": "Biofuel Production Technologies",
+    "171": "Animation and Multimedia Design",
+    "8014": "Social Service (Evening)",
+    "9003": "Agronomy",
+    "9070": "Communication Design",
+    "9085": "Veterinary Nursing",
+    "9119": "Informatics Engineering",
+    "9130": "Equinculture",
+    "9147": "Management",
+    "9238": "Social Service",
+    "9254": "Tourism",
+    "9500": "Nursing",
+    "9556": "Oral Hygiene",
+    "9670": "Advertising & Marketing Management",
+    "9773": "Journalism and Communication",
+    "9853": "Basic Education",
+    "9991": "Management (Evening)"
+  }
+}

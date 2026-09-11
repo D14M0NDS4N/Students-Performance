@@ -1,0 +1,21 @@
+# Lingkungan Virtual Python
+venv/
+env/
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+*.env
+
+# File Sistem Operasi
+.DS_Store
+Thumbs.db
