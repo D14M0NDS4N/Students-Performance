@@ -414,11 +414,11 @@ elif menu == "🎯 Prediksi Risiko Mahasiswa":
             pred_idx = model.predict(input_df)[0]
             probs = model.predict_proba(input_df)[0]
             
-            classes_list = metadata.get("classes", ["Dropout", "Enrolled", "Graduate"])
+            classes_list = ["Dropout", "Graduate"]
             pred_label = classes_list[pred_idx]
-            dropout_prob = probs[0]
-            enrolled_prob = probs[1]
-            graduate_prob = probs[2]
+            dropout_prob = probs[0]  # Index 0 is Dropout in binary classification
+            graduate_prob = probs[1] # Index 1 is Graduate
+            enrolled_prob = 0.0
             
             st.markdown("### 📋 Hasil Analisis Risiko Mahasiswa")
             
