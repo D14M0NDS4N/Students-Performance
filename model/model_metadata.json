@@ -1,19 +1,16 @@
 {
-  "model_name": "RandomForestClassifier",
+  "model_name": "RandomForestClassifier (Binary Classification)",
   "classes": [
-    "Dropout",
-    "Enrolled",
-    "Graduate"
+    "Graduate",
+    "Dropout"
   ],
   "label_to_id": {
-    "Dropout": 0,
-    "Enrolled": 1,
-    "Graduate": 2
+    "Graduate": 0,
+    "Dropout": 1
   },
   "id_to_label": {
-    "0": "Dropout",
-    "1": "Enrolled",
-    "2": "Graduate"
+    "0": "Graduate",
+    "1": "Dropout"
   },
   "feature_names": [
     "Marital_status",
@@ -56,100 +53,94 @@
   "top_features": [
     [
       "Curricular_units_2nd_sem_approved",
-      0.12769332432236993
-    ],
-    [
-      "Curricular_units_2nd_sem_grade",
-      0.09576202294340395
+      0.21778567222498363
     ],
     [
       "Curricular_units_1st_sem_approved",
-      0.07484890072240499
+      0.13829197227876885
+    ],
+    [
+      "Curricular_units_2nd_sem_grade",
+      0.11836002081707599
     ],
     [
       "Curricular_units_1st_sem_grade",
-      0.06214250809372253
-    ],
-    [
-      "Admission_grade",
-      0.0453357170139161
-    ],
-    [
-      "Curricular_units_2nd_sem_evaluations",
-      0.04531209755214874
+      0.06609988389162728
     ],
     [
       "Tuition_fees_up_to_date",
-      0.04233864071077223
-    ],
-    [
-      "Curricular_units_1st_sem_evaluations",
-      0.04165733651354424
+      0.05090261421887595
     ],
     [
       "Age_at_enrollment",
-      0.04134297886932322
+      0.0313130486033584
+    ],
+    [
+      "Curricular_units_2nd_sem_evaluations",
+      0.031273088916826355
+    ],
+    [
+      "Admission_grade",
+      0.028663047718867095
+    ],
+    [
+      "Curricular_units_1st_sem_evaluations",
+      0.02653333199695547
     ],
     [
       "Previous_qualification_grade",
-      0.040852061649915214
+      0.02518117011947817
     ],
     [
       "Course",
-      0.03363134539178719
+      0.024788909801878735
+    ],
+    [
+      "Scholarship_holder",
+      0.023555408271682718
     ],
     [
       "Fathers_occupation",
-      0.032071481075294735
+      0.017375231649487947
     ],
     [
-      "Mothers_occupation",
-      0.029981140838615878
+      "Curricular_units_2nd_sem_enrolled",
+      0.01674379039630679
     ],
     [
-      "GDP",
-      0.027209718725488018
-    ],
-    [
-      "Unemployment_rate",
-      0.024259269540636536
+      "Application_mode",
+      0.015874721224248625
     ]
   ],
   "metrics": {
-    "accuracy": 0.7537,
-    "macro_f1": 0.7082,
-    "weighted_f1": 0.7589,
+    "accuracy": 0.9298,
+    "macro_f1": 0.9264,
+    "weighted_f1": 0.9298,
     "classification_report": {
-      "Dropout": {
-        "precision": 0.8361344537815126,
-        "recall": 0.7007042253521126,
-        "f1-score": 0.7624521072796935,
-        "support": 284.0
-      },
-      "Enrolled": {
-        "precision": 0.46733668341708545,
-        "recall": 0.5849056603773585,
-        "f1-score": 0.5195530726256983,
-        "support": 159.0
-      },
       "Graduate": {
-        "precision": 0.8370535714285714,
-        "recall": 0.8484162895927602,
-        "f1-score": 0.8426966292134831,
+        "precision": 0.9453302961275627,
+        "recall": 0.9389140271493213,
+        "f1-score": 0.94211123723042,
         "support": 442.0
       },
-      "accuracy": 0.7536723163841808,
+      "Dropout": {
+        "precision": 0.9059233449477352,
+        "recall": 0.9154929577464789,
+        "f1-score": 0.9106830122591943,
+        "support": 284.0
+      },
+      "accuracy": 0.9297520661157025,
       "macro avg": {
-        "precision": 0.7135082362090565,
-        "recall": 0.7113420584407438,
-        "f1-score": 0.7082339363729583,
-        "support": 885.0
+        "precision": 0.925626820537649,
+        "recall": 0.9272034924479,
+        "f1-score": 0.9263971247448072,
+        "support": 726.0
       },
       "weighted avg": {
-        "precision": 0.7703349108572822,
-        "recall": 0.7536723163841808,
-        "f1-score": 0.7588895447765859,
-        "support": 885.0
+        "precision": 0.9299149047569414,
+        "recall": 0.9297520661157025,
+        "f1-score": 0.9298170004648165,
+        "support": 726.0
       }
     }
   },

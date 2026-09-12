@@ -18,7 +18,7 @@ Permasalahan utama yang dihadapi oleh Jaya Jaya Institut adalah:
 ### Cakupan Proyek
 Untuk menjawab permasalahan bisnis tersebut, cakupan proyek data science ini meliputi:
 1. **Eksplorasi Data (Exploratory Data Analysis / EDA)**: Menganalisis 4.424 baris data mahasiswa dengan 36 fitur prediktor untuk mengidentifikasi korelasi antara performa akademik, beban finansial, usia, program studi, dan status kelulusan.
-2. **Pemodelan Machine Learning**: Mengembangkan dan membandingkan beberapa algoritma klasifikasi (Logistic Regression, Random Forest, Gradient Boosting, HistGradientBoosting) dengan penanganan ketidakseimbangan kelas (*class weight balancing*) untuk memprediksi status kelulusan (`Graduate`, `Enrolled`, `Dropout`) serta menghasilkan probabilitas risiko dropout.
+2. **Pemodelan Machine Learning**: Mengembangkan dan membandingkan beberapa algoritma klasifikasi (Logistic Regression, Random Forest, Gradient Boosting, HistGradientBoosting) dengan penanganan ketidakseimbangan kelas (*class weight balancing*) untuk memprediksi status kelulusan (`Graduate` vs `Dropout`) serta mengkalkulasi probabilitas risiko dropout secara akurat bagi pemantauan mahasiswa aktif.
 3. **Pengembangan Business Dashboard Interaktif**: Membangun dashboard pemantauan performa dan retensi mahasiswa yang dilengkapi visualisasi KPI, grafik perbandingan akademik, dan faktor finansial.
 4. **Pengembangan Prototipe Web Machine Learning (Streamlit)**: Membangun aplikasi web interaktif yang siap pakai (*ready-to-use prototype*) dengan fitur simulasi prediksi individual dan prediksi massal (*batch processing CSV*).
 5. **Penyusunan Rekomendasi Action Items**: Merumuskan strategi intervensi berbasis data yang siap diimplementasikan oleh pihak manajemen kampus.
@@ -29,10 +29,20 @@ Untuk menjawab permasalahan bisnis tersebut, cakupan proyek data science ini mel
 
 **Sumber Data**:
 Dataset diperoleh dari rekam jejak akademik mahasiswa Jaya Jaya Institut (berdasarkan *Predict Students' Dropout and Academic Success dataset*, UCI Machine Learning Repository / Dicoding Dataset). Dataset mencakup 4.424 data mahasiswa dengan 37 atribut yang terdiri dari informasi demografis, sosio-ekonomi, data penerimaan, dan pencapaian akademik semester 1 dan semester 2.
+- **Tautan Dataset**: [students_performance.csv](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/data.csv)
 
 **Setup Environment**:
 
-1. **Membuat dan Mengaktifkan Virtual Environment (Opsional tapi Direkomendasikan)**:
+1. **Informasi Versi Python**:
+   - **Versi Python yang Digunakan**: `Python 3.11.9` (Direkomendasikan menggunakan `Python 3.11.x` atau minimal `Python >= 3.10, < 3.12`).
+   - *Penting*: Pencantuman dan penggunaan versi Python yang sesuai sangat krusial untuk memastikan kesesuaian environment saat reviewer maupun pengguna lain menjalankan proyek, memastikan kompatibilitas pustaka (*dependency compatibility*), serta membantu menghindari perbedaan perilaku program (*interpreter behavior discrepancies*) akibat perbedaan versi interpreter.
+   - Verifikasi versi Python di terminal:
+     ```bash
+     python --version
+     Python 3.11.9
+     ```
+
+2. **Membuat dan Mengaktifkan Virtual Environment (Direkomendasikan)**:
 ```bash
 # Windows
 python -m venv venv
@@ -43,7 +53,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-2. **Instalasi Dependencies**:
+3. **Instalasi Dependencies**:
 ```bash
 pip install -r requirements.txt
 ```
@@ -151,7 +161,14 @@ Berdasarkan seluruh rangkaian proses data science mulai dari Business Understand
    - **Beban Finansial (Indikator Kritis)**: Mahasiswa yang menunggak SPP (`Tuition_fees_up_to_date = 0`) memiliki tingkat dropout sebesar **62.3%**, berbanding hanya **23.9%** pada mahasiswa yang SPP-nya lancar. Status hutang/tunggakan (`Debtor = 1`) juga menyumbang tingkat dropout **61.7%**.
    - **Usia Saat Mendaftar & Kelas Malam**: Mahasiswa usia dewasa (>24 tahun) dan mahasiswa kelas malam menghadapi tantangan pembagian waktu antara pekerjaan dan perkuliahan yang memperbesar risiko putus kuliah.
    - **Dampak Positif Beasiswa**: Mahasiswa penerima beasiswa terbukti memiliki retensi sangat tinggi (**76.3% lulus dan hanya 13.6% dropout**).
-3. **Kinerja Solusi Machine Learning**: Model klasifikasi terbaik berbasis **Random Forest Classifier (Balanced)** berhasil mencapai akurasi **75.4%** dan Macro F1-Score **0.71**, dengan tingkat presisi deteksi kelas Dropout sebesar **84%**. Model ini sangat andal digunakan sebagai tulang punggung sistem peringatan dini kampus.
+3. **Kinerja Solusi Machine Learning**: Dengan memfokuskan pendeteksian secara spesifik pada mahasiswa yang telah berstatus *Graduate* dan *Dropout* (klasifikasi biner / *binary classification*), performa model mengalami peningkatan yang sangat signifikan:
+   - **Algoritma Terbaik**: Random Forest Classifier (dengan penanganan *class weight balancing*)
+   - **Akurasi Model**: **92.98%** (~93.0%)
+   - **Macro F1-Score**: **0.9264** (~0.93)
+   - **Weighted F1-Score**: **0.9299** (~0.93)
+   - **Performa Deteksi Kelas Dropout**: Precision **91%**, Recall **92%**, F1-Score **91%**
+   - **Performa Deteksi Kelas Graduate**: Precision **95%**, Recall **94%**, F1-Score **94%**
+   Tingkat sensitivitas (*recall* 92%) dan presisi (91%) yang sangat tinggi pada kelas Dropout memastikan hampir seluruh mahasiswa yang berisiko dropout dapat terdeteksi secara akurat tanpa banyak *false alarms*, menjadikannya sangat andal sebagai tulang punggung *Early Warning System* kampus. Mahasiswa berstatus *Enrolled* diposisikan sebagai target populasi aktif yang dimonitor skor risikonya secara berkala pada akhir setiap semester.
 
 ---
 

@@ -49,7 +49,7 @@
 
 > *"Selanjutnya, mari beralih ke solusi machine learning.*  
 > 
-> *Berdasarkan benchmark beberapa algoritma—termasuk Logistic Regression, Gradient Boosting, dan Random Forest—model terbaik yang dipilih adalah **Random Forest Classifier dengan pembobotan kelas seimbang (Balanced Class Weight)**. Model ini berhasil mencapai **akurasi 75.4%** dan **Macro F1-score 0.71**, dengan presisi mendeteksi kelas Dropout mencapai **84%**.*  
+> *Berdasarkan benchmark beberapa algoritma—termasuk Logistic Regression, Gradient Boosting, dan Random Forest—model terbaik yang dipilih adalah **Random Forest Classifier dengan pembobotan kelas seimbang (Balanced Class Weight)** pada klasifikasi biner (Graduate vs Dropout). Model ini berhasil mencapai **akurasi 92.98% (~93.0%)** dan **Macro F1-score 0.9264 (~0.93)**, dengan presisi mendeteksi kelas Dropout mencapai **91%** dan recall mencapai **92%**.*  
 > 
 > *Di menu Prediksi Risiko Individual, dosen wali atau staf bimbingan konseling dapat menginput data profil mahasiswa, mulai dari usia, status SPP, hutang, hingga SKS yang lulus di semester 1 dan 2.*  
 > 

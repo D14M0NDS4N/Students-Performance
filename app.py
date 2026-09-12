@@ -414,11 +414,11 @@ elif menu == "🎯 Prediksi Risiko Mahasiswa":
             pred_idx = model.predict(input_df)[0]
             probs = model.predict_proba(input_df)[0]
             
-            classes_list = ["Dropout", "Graduate"]
-            pred_label = classes_list[pred_idx]
-            dropout_prob = probs[0]  # Index 0 is Dropout in binary classification
-            graduate_prob = probs[1] # Index 1 is Graduate
-            enrolled_prob = 0.0
+            # In binary classification model: 0 is Graduate, 1 is Dropout
+            classes_dict = {0: "Graduate", 1: "Dropout"}
+            pred_label = classes_dict[pred_idx]
+            graduate_prob = probs[0] # Index 0 is Graduate
+            dropout_prob = probs[1]  # Index 1 is Dropout
             
             st.markdown("### 📋 Hasil Analisis Risiko Mahasiswa")
             
@@ -446,7 +446,6 @@ elif menu == "🎯 Prediksi Risiko Mahasiswa":
                 st.write("")
                 st.markdown("**Distribusi Probabilitas Model:**")
                 st.progress(float(dropout_prob), text=f"Probabilitas Dropout: {dropout_prob:.1%}")
-                st.progress(float(enrolled_prob), text=f"Probabilitas Bertahan (Enrolled): {enrolled_prob:.1%}")
                 st.progress(float(graduate_prob), text=f"Probabilitas Lulus (Graduate): {graduate_prob:.1%}")
                 
             with res_col2:
@@ -503,11 +502,11 @@ elif menu == "📁 Batch Prediction (CSV)":
                 preds = model.predict(X_batch)
                 probs = model.predict_proba(X_batch)
                 
-                classes_list = metadata.get("classes", ["Dropout", "Enrolled", "Graduate"])
+                classes_dict = {0: "Graduate", 1: "Dropout"}
                 batch_result = batch_data.copy()
-                batch_result["Predicted_Status"] = [classes_list[p] for p in preds]
-                batch_result["Dropout_Probability"] = np.round(probs[:, 0] * 100, 1)
-                batch_result["Graduate_Probability"] = np.round(probs[:, 2] * 100, 1)
+                batch_result["Predicted_Status"] = [classes_dict[p] for p in preds]
+                batch_result["Dropout_Probability"] = np.round(probs[:, 1] * 100, 1)
+                batch_result["Graduate_Probability"] = np.round(probs[:, 0] * 100, 1)
                 
                 # Risk level categorization
                 def assign_risk(row):
